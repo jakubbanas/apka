@@ -1,0 +1,32 @@
+[debug] [2019-07-18T20:38:03.844Z] ----------------------------------------------------------------------
+[debug] [2019-07-18T20:38:03.846Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2019-07-18T20:38:03.846Z] CLI Version:   6.3.0
+[debug] [2019-07-18T20:38:03.846Z] Platform:      darwin
+[debug] [2019-07-18T20:38:03.846Z] Node Version:  v10.14.1
+[debug] [2019-07-18T20:38:03.847Z] Time:          Thu Jul 18 2019 22:38:03 GMT+0200 (Central European Summer Time)
+[debug] [2019-07-18T20:38:03.847Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-18T20:38:03.854Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-18T20:38:03.855Z] > authorizing via signed-in user
+[debug] [2019-07-18T20:38:03.855Z] [iam] checking project podzielnia for permissions ["firebase.projects.get"]
+[debug] [2019-07-18T20:38:03.856Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-18T20:38:03.856Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-18T20:38:04.054Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-18T20:38:04.065Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/podzielnia:testIamPermissions  
+
+[debug] [2019-07-18T20:38:04.953Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-18T20:38:04.955Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/podzielnia  
+ 
+[debug] [2019-07-18T20:38:05.854Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/banas/Workspace/podzielnia'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-07-18T20:38:06.215Z] Fetching environment
+[debug] [2019-07-18T20:38:06.217Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/753354763970:getServerAppConfig  
+ 
+[debug] [2019-07-18T20:38:06.516Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-18T20:38:06.517Z] Starting @google-cloud/functions-emulator
+[debug] [2019-07-18T20:38:07.559Z] Parsing function triggers
+[info] ✔  functions: helloWorld: http://localhost:5000/podzielnia/us-central1/helloWorld
