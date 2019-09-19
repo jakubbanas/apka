@@ -1,5 +1,6 @@
 import Box from '@material-ui/core/Box';
-import { withStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { lighten, withStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { Answer, Question } from '../types/Question';
 import AnswerPicker from './AnswerPicker';
@@ -9,6 +10,7 @@ import QuestionText from './QuestionText';
 interface Props {
   question: Question;
   onPickAnswer: (answer: Answer) => void;
+  progress: number;
 }
 
 const QuestionWrapper = withStyles({
@@ -19,9 +21,21 @@ const QuestionWrapper = withStyles({
   },
 })(Box);
 
-export default ({ question, onPickAnswer }: Props) => (
+const BorderLinearProgress = withStyles({
+  root: {
+    height: 10,
+    backgroundColor: lighten('#2e378d', 0.7),
+  },
+  bar: {
+    borderRadius: 20,
+    backgroundColor: '#2e378d',
+  },
+})(LinearProgress);
+
+export default ({ question, onPickAnswer, progress }: Props) => (
   <>
     <QuestionImage image={question.image} />
+    <BorderLinearProgress variant="determinate" value={progress} />
     <QuestionWrapper>
       <QuestionText text={question.title} />
       <AnswerPicker onPick={onPickAnswer} answers={question.answers} />

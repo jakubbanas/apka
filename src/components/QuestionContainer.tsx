@@ -1,7 +1,6 @@
 import { Box, Button, ButtonGroup, Container } from '@material-ui/core';
 // import Container from '@material-ui/core/Container';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { lighten, makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Cancel from '@material-ui/icons/Cancel';
 import CheckCircle from '@material-ui/icons/CheckCircle';
@@ -10,17 +9,6 @@ import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
 import QuestionView from './QuestionView';
-
-const BorderLinearProgress = withStyles({
-  root: {
-    height: 10,
-    backgroundColor: lighten('#2e378d', 0.7),
-  },
-  bar: {
-    borderRadius: 20,
-    backgroundColor: '#2e378d',
-  },
-})(LinearProgress);
 
 const QuizContainer = withStyles({
   root: {
@@ -85,10 +73,6 @@ export default function QuestionContainer({
     <QuizContainer>
       <Box>
         <Bar>QUIZ</Bar>
-        <BorderLinearProgress
-          variant="determinate"
-          value={(questionNumber / questionsTotalNumber) * 100}
-        />
       </Box>
       <CustomButtonGroup>
         <Button classes={{ root: classes.wrong }}>
@@ -104,7 +88,11 @@ export default function QuestionContainer({
           <CheckCircle />
         </Button>
       </CustomButtonGroup>
-      <QuestionView question={question} onPickAnswer={onPick} />
+      <QuestionView
+        question={question}
+        onPickAnswer={onPick}
+        progress={(questionNumber / questionsTotalNumber) * 100}
+      />
       <Modal
         modalVisible={modalVisible}
         closeModal={closeModal}
